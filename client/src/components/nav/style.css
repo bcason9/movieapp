@@ -2,10 +2,10 @@ nav {
     background-color: black;
 }
 
-h5, h6 {
+.nav-item {
     color: white;
 }
 
-h5:hover, h6:hover {
+.nav-item:hover {
     color: orange;
 }

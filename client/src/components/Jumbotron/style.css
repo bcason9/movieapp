@@ -1,3 +1,16 @@
 .jumbotron {
     background-color: orange;
 }
+
+
+@media screen and (max-width: 375px) {
+    .jumbotron {
+        width: 335px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .jumbotron {
+        width: 290px;
+    }
+}

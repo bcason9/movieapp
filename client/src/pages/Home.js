@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
 import Jumbo from '../components/Jumbotron';
+import { Row, Col } from 'react-bootstrap';
 
 
 class Home extends Component {
     render() {
         return (
             <div className='body'>
-                <Jumbo>
-                <h1>Film App Home Page</h1>
+                <Jumbo className='home'>
+                <h1 id='home-header'>FilmBase</h1>
+                <br></br>
+                <p>FilmBase allows users to search for, rate, and review their favorite films.</p>
+                <br></br>
+                <a href='/search'>Search Films Now</a>
                 </Jumbo>
                 
             </div>

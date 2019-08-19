@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 
 function Btn(props) {
     return(
-        <Button variant='primary' {...props}>
+        <Button variant='dark' {...props}>
             Search
         </Button>
     )
