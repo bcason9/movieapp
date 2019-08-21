@@ -4,6 +4,9 @@ import Btn from '../components/Button';
 import Jumbo from '../components/Jumbotron';
 import axios from 'axios';
 
+
+
+
 class Search extends Component {
 
     state = {
@@ -14,8 +17,8 @@ class Search extends Component {
 
     componentDidMount() {
         console.log('mount')
-        
     }
+
 
     getMovies = e => {
         e.preventDefault();
@@ -36,14 +39,18 @@ class Search extends Component {
             if (typeof this.state.movieRes.Title !== 'undefined') {
             resDiv.innerHTML = `<h3>${this.state.movieRes.Title}, ${this.state.movieRes.Year}</h3>\n<img src=${this.state.movieRes.Poster} alt=''></img>
             <br></br><h6>Rated ${this.state.movieRes.Rated}\nRelease Date: ${this.state.movieRes.Released}\nDirector: ${this.state.movieRes.Director}\n
-            Written By: ${this.state.movieRes.Writer}</h6>\n${this.state.movieRes.Plot}`
+            Written By: ${this.state.movieRes.Writer}</h6>\n${this.state.movieRes.Plot}<br><a href='/review'>Rate/Review this Film</a>`
+            localStorage.removeItem('film');
+            localStorage.setItem('film', this.state.movieRes.Title)
             } else {
                 resDiv.innerHTML = '<h6>No Results Found</h6>'
             }
+           
 
         });
         
     };
+
 
     handleChange = e => {
         console.log(e);
@@ -65,12 +72,10 @@ class Search extends Component {
                     onChange={this.handleChange}
                     value={this.state.movie} />
                 <Btn onClick={this.getMovies}/>
-                <div id='res-div' className='text-center'></div>
+                <div id='res-div' className='text-center'>
+                </div>
                 </Jumbo>
-                
-                
-                
-                
+            
             </div>
            
         );
